@@ -1,0 +1,318 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F53F0BB4176F655A00E8FBF3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F53F0BB3176F655A00E8FBF3 /* UIKit.framework */; };
+		F53F0BB6176F655A00E8FBF3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F53F0BB5176F655A00E8FBF3 /* Foundation.framework */; };
+		F53F0BB8176F655A00E8FBF3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F53F0BB7176F655A00E8FBF3 /* CoreGraphics.framework */; };
+		F53F0BBE176F655A00E8FBF3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F53F0BBC176F655A00E8FBF3 /* InfoPlist.strings */; };
+		F53F0BC0176F655A00E8FBF3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F53F0BBF176F655A00E8FBF3 /* main.m */; };
+		F53F0BC4176F655A00E8FBF3 /* SvImageInfoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F53F0BC3176F655A00E8FBF3 /* SvImageInfoAppDelegate.m */; };
+		F53F0BC6176F655A00E8FBF3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F53F0BC5176F655A00E8FBF3 /* Default.png */; };
+		F53F0BC8176F655A00E8FBF3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F53F0BC7176F655A00E8FBF3 /* Default@2x.png */; };
+		F53F0BCA176F655A00E8FBF3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F53F0BC9176F655A00E8FBF3 /* Default-568h@2x.png */; };
+		F53F0BCD176F655A00E8FBF3 /* SvImageInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F53F0BCC176F655A00E8FBF3 /* SvImageInfoViewController.m */; };
+		F53F0BD0176F655A00E8FBF3 /* SvImageInfoViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = F53F0BCE176F655A00E8FBF3 /* SvImageInfoViewController_iPhone.xib */; };
+		F53F0BD3176F655A00E8FBF3 /* SvImageInfoViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = F53F0BD1176F655A00E8FBF3 /* SvImageInfoViewController_iPad.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F53F0BB0176F655A00E8FBF3 /* SvImgeInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SvImgeInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F53F0BB3176F655A00E8FBF3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F53F0BB5176F655A00E8FBF3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F53F0BB7176F655A00E8FBF3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F53F0BBB176F655A00E8FBF3 /* SvImgeInfo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SvImgeInfo-Info.plist"; sourceTree = "<group>"; };
+		F53F0BBD176F655A00E8FBF3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F53F0BBF176F655A00E8FBF3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F53F0BC1176F655A00E8FBF3 /* SvImgeInfo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SvImgeInfo-Prefix.pch"; sourceTree = "<group>"; };
+		F53F0BC2176F655A00E8FBF3 /* SvImageInfoAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SvImageInfoAppDelegate.h; sourceTree = "<group>"; };
+		F53F0BC3176F655A00E8FBF3 /* SvImageInfoAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SvImageInfoAppDelegate.m; sourceTree = "<group>"; };
+		F53F0BC5176F655A00E8FBF3 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		F53F0BC7176F655A00E8FBF3 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		F53F0BC9176F655A00E8FBF3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		F53F0BCB176F655A00E8FBF3 /* SvImageInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SvImageInfoViewController.h; sourceTree = "<group>"; };
+		F53F0BCC176F655A00E8FBF3 /* SvImageInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SvImageInfoViewController.m; sourceTree = "<group>"; };
+		F53F0BCF176F655A00E8FBF3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SvImageInfoViewController_iPhone.xib; sourceTree = "<group>"; };
+		F53F0BD2176F655A00E8FBF3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SvImageInfoViewController_iPad.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F53F0BAD176F655A00E8FBF3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F53F0BB4176F655A00E8FBF3 /* UIKit.framework in Frameworks */,
+				F53F0BB6176F655A00E8FBF3 /* Foundation.framework in Frameworks */,
+				F53F0BB8176F655A00E8FBF3 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F53F0BA7176F655A00E8FBF3 = {
+			isa = PBXGroup;
+			children = (
+				F53F0BB9176F655A00E8FBF3 /* SvImgeInfo */,
+				F53F0BB2176F655A00E8FBF3 /* Frameworks */,
+				F53F0BB1176F655A00E8FBF3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F53F0BB1176F655A00E8FBF3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F53F0BB0176F655A00E8FBF3 /* SvImgeInfo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F53F0BB2176F655A00E8FBF3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F53F0BB3176F655A00E8FBF3 /* UIKit.framework */,
+				F53F0BB5176F655A00E8FBF3 /* Foundation.framework */,
+				F53F0BB7176F655A00E8FBF3 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F53F0BB9176F655A00E8FBF3 /* SvImgeInfo */ = {
+			isa = PBXGroup;
+			children = (
+				F53F0BC2176F655A00E8FBF3 /* SvImageInfoAppDelegate.h */,
+				F53F0BC3176F655A00E8FBF3 /* SvImageInfoAppDelegate.m */,
+				F53F0BCB176F655A00E8FBF3 /* SvImageInfoViewController.h */,
+				F53F0BCC176F655A00E8FBF3 /* SvImageInfoViewController.m */,
+				F53F0BCE176F655A00E8FBF3 /* SvImageInfoViewController_iPhone.xib */,
+				F53F0BD1176F655A00E8FBF3 /* SvImageInfoViewController_iPad.xib */,
+				F53F0BBA176F655A00E8FBF3 /* Supporting Files */,
+			);
+			path = SvImgeInfo;
+			sourceTree = "<group>";
+		};
+		F53F0BBA176F655A00E8FBF3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F53F0BBB176F655A00E8FBF3 /* SvImgeInfo-Info.plist */,
+				F53F0BBC176F655A00E8FBF3 /* InfoPlist.strings */,
+				F53F0BBF176F655A00E8FBF3 /* main.m */,
+				F53F0BC1176F655A00E8FBF3 /* SvImgeInfo-Prefix.pch */,
+				F53F0BC5176F655A00E8FBF3 /* Default.png */,
+				F53F0BC7176F655A00E8FBF3 /* Default@2x.png */,
+				F53F0BC9176F655A00E8FBF3 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F53F0BAF176F655A00E8FBF3 /* SvImgeInfo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F53F0BD6176F655A00E8FBF3 /* Build configuration list for PBXNativeTarget "SvImgeInfo" */;
+			buildPhases = (
+				F53F0BAC176F655A00E8FBF3 /* Sources */,
+				F53F0BAD176F655A00E8FBF3 /* Frameworks */,
+				F53F0BAE176F655A00E8FBF3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SvImgeInfo;
+			productName = SvImgeInfo;
+			productReference = F53F0BB0176F655A00E8FBF3 /* SvImgeInfo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F53F0BA8176F655A00E8FBF3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SvImageInfo;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = maple;
+			};
+			buildConfigurationList = F53F0BAB176F655A00E8FBF3 /* Build configuration list for PBXProject "SvImgeInfo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F53F0BA7176F655A00E8FBF3;
+			productRefGroup = F53F0BB1176F655A00E8FBF3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F53F0BAF176F655A00E8FBF3 /* SvImgeInfo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F53F0BAE176F655A00E8FBF3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F53F0BBE176F655A00E8FBF3 /* InfoPlist.strings in Resources */,
+				F53F0BC6176F655A00E8FBF3 /* Default.png in Resources */,
+				F53F0BC8176F655A00E8FBF3 /* Default@2x.png in Resources */,
+				F53F0BCA176F655A00E8FBF3 /* Default-568h@2x.png in Resources */,
+				F53F0BD0176F655A00E8FBF3 /* SvImageInfoViewController_iPhone.xib in Resources */,
+				F53F0BD3176F655A00E8FBF3 /* SvImageInfoViewController_iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F53F0BAC176F655A00E8FBF3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F53F0BC0176F655A00E8FBF3 /* main.m in Sources */,
+				F53F0BC4176F655A00E8FBF3 /* SvImageInfoAppDelegate.m in Sources */,
+				F53F0BCD176F655A00E8FBF3 /* SvImageInfoViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F53F0BBC176F655A00E8FBF3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F53F0BBD176F655A00E8FBF3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F53F0BCE176F655A00E8FBF3 /* SvImageInfoViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F53F0BCF176F655A00E8FBF3 /* en */,
+			);
+			name = SvImageInfoViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		F53F0BD1176F655A00E8FBF3 /* SvImageInfoViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F53F0BD2176F655A00E8FBF3 /* en */,
+			);
+			name = SvImageInfoViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F53F0BD4176F655A00E8FBF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F53F0BD5176F655A00E8FBF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F53F0BD7176F655A00E8FBF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SvImgeInfo/SvImgeInfo-Prefix.pch";
+				INFOPLIST_FILE = "SvImgeInfo/SvImgeInfo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F53F0BD8176F655A00E8FBF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SvImgeInfo/SvImgeInfo-Prefix.pch";
+				INFOPLIST_FILE = "SvImgeInfo/SvImgeInfo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F53F0BAB176F655A00E8FBF3 /* Build configuration list for PBXProject "SvImgeInfo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F53F0BD4176F655A00E8FBF3 /* Debug */,
+				F53F0BD5176F655A00E8FBF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F53F0BD6176F655A00E8FBF3 /* Build configuration list for PBXNativeTarget "SvImgeInfo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F53F0BD7176F655A00E8FBF3 /* Debug */,
+				F53F0BD8176F655A00E8FBF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F53F0BA8176F655A00E8FBF3 /* Project object */;
+}
