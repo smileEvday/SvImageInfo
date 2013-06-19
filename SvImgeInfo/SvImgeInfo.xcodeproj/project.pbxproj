@@ -19,6 +19,11 @@
 		F53F0BCD176F655A00E8FBF3 /* SvImageInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F53F0BCC176F655A00E8FBF3 /* SvImageInfoViewController.m */; };
 		F53F0BD0176F655A00E8FBF3 /* SvImageInfoViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = F53F0BCE176F655A00E8FBF3 /* SvImageInfoViewController_iPhone.xib */; };
 		F53F0BD3176F655A00E8FBF3 /* SvImageInfoViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = F53F0BD1176F655A00E8FBF3 /* SvImageInfoViewController_iPad.xib */; };
+		F53F0BDA176F658500E8FBF3 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F53F0BD9176F658500E8FBF3 /* ImageIO.framework */; };
+		F53F0BDC1770AA2700E8FBF3 /* DSC02039.JPG in Resources */ = {isa = PBXBuildFile; fileRef = F53F0BDB1770AA2700E8FBF3 /* DSC02039.JPG */; };
+		F59D15B81771EC220061B84B /* SvImageInfoUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F59D15B71771EC220061B84B /* SvImageInfoUtils.m */; };
+		F59D15BA1771F3460061B84B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F59D15B91771F3460061B84B /* MobileCoreServices.framework */; };
+		F59D15BD1771FD250061B84B /* SvImageInfoEditUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F59D15BC1771FD250061B84B /* SvImageInfoEditUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +44,13 @@
 		F53F0BCC176F655A00E8FBF3 /* SvImageInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SvImageInfoViewController.m; sourceTree = "<group>"; };
 		F53F0BCF176F655A00E8FBF3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SvImageInfoViewController_iPhone.xib; sourceTree = "<group>"; };
 		F53F0BD2176F655A00E8FBF3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SvImageInfoViewController_iPad.xib; sourceTree = "<group>"; };
+		F53F0BD9176F658500E8FBF3 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		F53F0BDB1770AA2700E8FBF3 /* DSC02039.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DSC02039.JPG; sourceTree = "<group>"; };
+		F59D15B61771EC220061B84B /* SvImageInfoUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SvImageInfoUtils.h; sourceTree = "<group>"; };
+		F59D15B71771EC220061B84B /* SvImageInfoUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SvImageInfoUtils.m; sourceTree = "<group>"; };
+		F59D15B91771F3460061B84B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		F59D15BB1771FD250061B84B /* SvImageInfoEditUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SvImageInfoEditUtils.h; sourceTree = "<group>"; };
+		F59D15BC1771FD250061B84B /* SvImageInfoEditUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SvImageInfoEditUtils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F59D15BA1771F3460061B84B /* MobileCoreServices.framework in Frameworks */,
+				F53F0BDA176F658500E8FBF3 /* ImageIO.framework in Frameworks */,
 				F53F0BB4176F655A00E8FBF3 /* UIKit.framework in Frameworks */,
 				F53F0BB6176F655A00E8FBF3 /* Foundation.framework in Frameworks */,
 				F53F0BB8176F655A00E8FBF3 /* CoreGraphics.framework in Frameworks */,
@@ -75,6 +89,8 @@
 		F53F0BB2176F655A00E8FBF3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F59D15B91771F3460061B84B /* MobileCoreServices.framework */,
+				F53F0BD9176F658500E8FBF3 /* ImageIO.framework */,
 				F53F0BB3176F655A00E8FBF3 /* UIKit.framework */,
 				F53F0BB5176F655A00E8FBF3 /* Foundation.framework */,
 				F53F0BB7176F655A00E8FBF3 /* CoreGraphics.framework */,
@@ -91,6 +107,7 @@
 				F53F0BCC176F655A00E8FBF3 /* SvImageInfoViewController.m */,
 				F53F0BCE176F655A00E8FBF3 /* SvImageInfoViewController_iPhone.xib */,
 				F53F0BD1176F655A00E8FBF3 /* SvImageInfoViewController_iPad.xib */,
+				F59D15B51771EC030061B84B /* SvImageInfoUtil */,
 				F53F0BBA176F655A00E8FBF3 /* Supporting Files */,
 			);
 			path = SvImgeInfo;
@@ -99,6 +116,7 @@
 		F53F0BBA176F655A00E8FBF3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F53F0BDB1770AA2700E8FBF3 /* DSC02039.JPG */,
 				F53F0BBB176F655A00E8FBF3 /* SvImgeInfo-Info.plist */,
 				F53F0BBC176F655A00E8FBF3 /* InfoPlist.strings */,
 				F53F0BBF176F655A00E8FBF3 /* main.m */,
@@ -109,6 +127,17 @@
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
+		};
+		F59D15B51771EC030061B84B /* SvImageInfoUtil */ = {
+			isa = PBXGroup;
+			children = (
+				F59D15B61771EC220061B84B /* SvImageInfoUtils.h */,
+				F59D15B71771EC220061B84B /* SvImageInfoUtils.m */,
+				F59D15BB1771FD250061B84B /* SvImageInfoEditUtils.h */,
+				F59D15BC1771FD250061B84B /* SvImageInfoEditUtils.m */,
+			);
+			path = SvImageInfoUtil;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -168,6 +197,7 @@
 				F53F0BCA176F655A00E8FBF3 /* Default-568h@2x.png in Resources */,
 				F53F0BD0176F655A00E8FBF3 /* SvImageInfoViewController_iPhone.xib in Resources */,
 				F53F0BD3176F655A00E8FBF3 /* SvImageInfoViewController_iPad.xib in Resources */,
+				F53F0BDC1770AA2700E8FBF3 /* DSC02039.JPG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +211,8 @@
 				F53F0BC0176F655A00E8FBF3 /* main.m in Sources */,
 				F53F0BC4176F655A00E8FBF3 /* SvImageInfoAppDelegate.m in Sources */,
 				F53F0BCD176F655A00E8FBF3 /* SvImageInfoViewController.m in Sources */,
+				F59D15B81771EC220061B84B /* SvImageInfoUtils.m in Sources */,
+				F59D15BD1771FD250061B84B /* SvImageInfoEditUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +308,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SvImgeInfo/SvImgeInfo-Prefix.pch";
 				INFOPLIST_FILE = "SvImgeInfo/SvImgeInfo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -287,6 +320,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SvImgeInfo/SvImgeInfo-Prefix.pch";
 				INFOPLIST_FILE = "SvImgeInfo/SvImgeInfo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -311,6 +345,7 @@
 				F53F0BD8176F655A00E8FBF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
