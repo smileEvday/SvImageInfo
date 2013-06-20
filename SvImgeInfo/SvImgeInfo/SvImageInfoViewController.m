@@ -21,18 +21,14 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    NSString *str = [[NSBundle mainBundle] pathForResource:@"DSC02039" ofType:@"JPG"];
-    NSURL *fileUrl = [NSURL fileURLWithPath:str];
+    NSURL *fileUrl = [[NSBundle mainBundle] URLForResource:@"DSC02039" withExtension:@"JPG"];
+    
+    NSLog(@"%@", NSHomeDirectory());
     
     SvImageInfoEditUtils *editUtils = [[SvImageInfoEditUtils alloc] initWithURL:fileUrl];
-    [editUtils setImageOrientation:UIImageOrientationDown];
+    [editUtils setImageOrientation:exifOrientationDown];
+    [editUtils setTiffOrientation:exifOrientationDown];
     [editUtils release];
-    
-    UIImageView *imageV = [[UIImageView alloc] initWithFrame:self.view.bounds];
-    imageV.image = [UIImage imageNamed:@"DSC02039.JPG"];
-    imageV.contentMode = UIViewContentModeScaleAspectFit;
-    [self.view addSubview:imageV];
-    [imageV release];
     
     SvImageInfoUtils *imageInfoUtils = [[SvImageInfoUtils alloc] initWithURL:fileUrl];
     
@@ -43,11 +39,11 @@
     
     [imageInfoUtils release];
     
-    
-    
-    
-    
-    
+    UIImageView *imageV = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    imageV.image = [UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/Documents/DSC02040.JPG", NSHomeDirectory()]];
+    imageV.contentMode = UIViewContentModeScaleAspectFit;
+    [self.view addSubview:imageV];
+    [imageV release];
 }
 
 - (void)didReceiveMemoryWarning

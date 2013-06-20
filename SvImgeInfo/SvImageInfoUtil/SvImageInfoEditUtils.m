@@ -22,7 +22,9 @@
     self = [super initWithURL:imageUrl];
     if (self) {
         CFStringRef imagUTI = CGImageSourceGetType(_imageRef);
-        _imageDestination = CGImageDestinationCreateWithURL((CFURLRef)imageUrl, imagUTI, 1, NULL);
+        
+        NSURL *newFileUrl = [[NSURL alloc] initFileURLWithPath:[NSString stringWithFormat:@"%@/Documents/DSC02040.JPG", NSHomeDirectory()]];
+        _imageDestination = CGImageDestinationCreateWithURL((CFURLRef)newFileUrl, imagUTI, 1, NULL);
         
         _newImageInfoDictonary = [[NSMutableDictionary alloc] init];
     }
@@ -34,21 +36,20 @@
 {
     if (_imageDestination != NULL) {
         [self save];
+        CFRelease(_imageDestination);
     }
-    
-    CFRelease(_imageDestination);
-    
+        
     [_newImageInfoDictonary release];
     
     [super dealloc];
 }
 
-- (void)setImageOrientation:(UIImageOrientation)newOrientation
+- (void)setImageOrientation:(ExifOrientation)newOrientation
 {
     [_newImageInfoDictonary setValue:[NSNumber numberWithInteger:newOrientation] forKey:(NSString*)kCGImagePropertyOrientation];
 }
 
-- (void)setTiffOrientation:(UIImageOrientation)newOrientation
+- (void)setTiffOrientation:(ExifOrientation)newOrientation
 {
     NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:[self tiffDictonary]];
     [dict setValue:[NSNumber numberWithInteger:newOrientation] forKey:(NSString*)kCGImagePropertyTIFFOrientation];
@@ -62,10 +63,15 @@
     NSMutableDictionary *dictInfo = [NSMutableDictionary dictionaryWithDictionary:dict];
     
     // modify dict before add
-
     
-//    CGImageDestinationAddImageFromSource(_imageDestination, _imageRef, 0, <#CFDictionaryRef properties#>)
+    // modify orientation
+    [dictInfo setValue:[_newImageInfoDictonary valueForKey:(NSString *)kCGImagePropertyOrientation] forKey:(NSString*)kCGImagePropertyOrientation];
     
+    // modify tiff orientation
+    NSMutableDictionary *tiffDict = [NSMutableDictionary dictionaryWithDictionary:[_newImageInfoDictonary valueForKey:(NSString*)kCGImagePropertyTIFFDictionary]];
+    [dictInfo setValue:tiffDict forKey:(NSString*)kCGImagePropertyTIFFDictionary];
+    
+    CGImageDestinationAddImageFromSource(_imageDestination, _imageRef, 0, (CFDictionaryRef)dictInfo);
     CGImageDestinationFinalize(_imageDestination);
 }
 

@@ -14,12 +14,12 @@
 /*
  * @brief set image's orientation
  */
-- (void)setImageOrientation:(UIImageOrientation)newOrientation;
+- (void)setImageOrientation:(ExifOrientation)newOrientation;
 
 /*
  * @brief set orientation in tiff info
  */
-- (void)setTiffOrientation:(UIImageOrientation)newOrientation;
+- (void)setTiffOrientation:(ExifOrientation)newOrientation;
 
 /*
  * @brief save modify to image file
