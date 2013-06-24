@@ -24,6 +24,8 @@
     if (self) {
         _imageRef = CGImageSourceCreateWithURL((CFURLRef)imageUrl, NULL);
         _imageProperty = (NSDictionary*)CGImageSourceCopyPropertiesAtIndex(_imageRef, 0, NULL);
+        
+        NSLog(@"image property: %@", _imageProperty);
     }
     
     return self;

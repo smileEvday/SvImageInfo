@@ -21,35 +21,38 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    NSURL *fileUrl = [[NSBundle mainBundle] URLForResource:@"DSC02039" withExtension:@"JPG"];
-    
-    NSLog(@"%@", NSHomeDirectory());
-    
-    SvImageInfoEditUtils *editUtils = [[SvImageInfoEditUtils alloc] initWithURL:fileUrl];
-    [editUtils setImageOrientation:exifOrientationDown];
-    [editUtils setTiffOrientation:exifOrientationDown];
-    [editUtils release];
-    
-    SvImageInfoUtils *imageInfoUtils = [[SvImageInfoUtils alloc] initWithURL:fileUrl];
-    
-    NSLog(@"image size: %d", [imageInfoUtils fileSize]);
-    NSLog(@"image type: %@", [imageInfoUtils fileType]);
-    NSLog(@"image exif info: %@", [imageInfoUtils exifDictionary]);
-    NSLog(@"image tiff info: %@", [imageInfoUtils tiffDictonary]);
-    
-    [imageInfoUtils release];
-    
-    UIImageView *imageV = [[UIImageView alloc] initWithFrame:self.view.bounds];
-    imageV.image = [UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/Documents/DSC02040.JPG", NSHomeDirectory()]];
-    imageV.contentMode = UIViewContentModeScaleAspectFit;
-    [self.view addSubview:imageV];
-    [imageV release];
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    btn.frame = CGRectMake(0, 0, 140, 60);
+    btn.center = CGPointMake(self.view.bounds.size.width / 2, self.view.bounds.size.height / 2);
+    [btn setTitle:@"Load Image" forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(loadImage:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)loadImage:(UIButton*)btn
+{
+    UIImage *image = [UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/Documents/DSC02040.JPG", NSHomeDirectory()]];
+
+    NSLog(@"%f %f %f %d", image.size.width, image.size.height, image.scale, image.imageOrientation);
+
+    CGImageRef imageRef = image.CGImage;
+    NSLog(@"%zd %zd", CGImageGetWidth(imageRef), CGImageGetHeight(imageRef));
+
+    UIImageView *imageV = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    imageV.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    imageV.backgroundColor = [UIColor redColor];
+    imageV.image = image;
+    imageV.contentMode = UIViewContentModeScaleAspectFit;
+    [self.view addSubview:imageV];
+    [imageV release];
+    
+    UIImageWriteToSavedPhotosAlbum(imageV.image, nil, nil, nil);
 }
 
 @end

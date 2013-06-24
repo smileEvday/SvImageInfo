@@ -9,6 +9,7 @@
 #import "SvImageInfoAppDelegate.h"
 
 #import "SvImageInfoViewController.h"
+#import "SvImageInfoEditUtils.h"
 
 @implementation SvImageInfoAppDelegate
 
@@ -30,6 +31,26 @@
     }
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+    
+    
+    NSURL *fileUrl = [[NSBundle mainBundle] URLForResource:@"DSC02039" withExtension:@"JPG"];
+    
+    NSLog(@"%@", NSHomeDirectory());
+    
+    SvImageInfoEditUtils *editUtils = [[SvImageInfoEditUtils alloc] initWithURL:fileUrl];
+    [editUtils setImageOrientation:exifOrientationLeft];
+    [editUtils release];
+    
+    fileUrl = [[NSURL alloc] initFileURLWithPath:[NSString stringWithFormat:@"%@/Documents/DSC02040.JPG", NSHomeDirectory()]];
+    SvImageInfoUtils *imageInfoUtils = [[SvImageInfoUtils alloc] initWithURL:fileUrl];
+    
+    NSLog(@"image size: %d", [imageInfoUtils fileSize]);
+    NSLog(@"image type: %@", [imageInfoUtils fileType]);
+    NSLog(@"image exif info: %@", [imageInfoUtils exifDictionary]);
+    NSLog(@"image tiff info: %@", [imageInfoUtils tiffDictonary]);
+    
+    [imageInfoUtils release];
+    
     return YES;
 }
 

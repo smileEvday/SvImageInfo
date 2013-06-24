@@ -17,11 +17,6 @@
 - (void)setImageOrientation:(ExifOrientation)newOrientation;
 
 /*
- * @brief set orientation in tiff info
- */
-- (void)setTiffOrientation:(ExifOrientation)newOrientation;
-
-/*
  * @brief save modify to image file
  */
 - (void)save;

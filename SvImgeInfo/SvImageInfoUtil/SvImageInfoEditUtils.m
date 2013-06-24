@@ -10,7 +10,7 @@
 
 @interface SvImageInfoEditUtils () {
     CGImageDestinationRef _imageDestination;
-    NSMutableDictionary   *_newImageInfoDictonary;
+    NSInteger             _newImageOrientation;
 }
 
 @end
@@ -26,7 +26,7 @@
         NSURL *newFileUrl = [[NSURL alloc] initFileURLWithPath:[NSString stringWithFormat:@"%@/Documents/DSC02040.JPG", NSHomeDirectory()]];
         _imageDestination = CGImageDestinationCreateWithURL((CFURLRef)newFileUrl, imagUTI, 1, NULL);
         
-        _newImageInfoDictonary = [[NSMutableDictionary alloc] init];
+        _newImageOrientation = -1;  // never set orientation
     }
     
     return self;
@@ -38,23 +38,13 @@
         [self save];
         CFRelease(_imageDestination);
     }
-        
-    [_newImageInfoDictonary release];
     
     [super dealloc];
 }
 
 - (void)setImageOrientation:(ExifOrientation)newOrientation
 {
-    [_newImageInfoDictonary setValue:[NSNumber numberWithInteger:newOrientation] forKey:(NSString*)kCGImagePropertyOrientation];
-}
-
-- (void)setTiffOrientation:(ExifOrientation)newOrientation
-{
-    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:[self tiffDictonary]];
-    [dict setValue:[NSNumber numberWithInteger:newOrientation] forKey:(NSString*)kCGImagePropertyTIFFOrientation];
-    
-    [_newImageInfoDictonary setValue:dict forKey:(NSString*)kCGImagePropertyTIFFDictionary];
+    _newImageOrientation = newOrientation;
 }
 
 - (void)save
@@ -64,12 +54,52 @@
     
     // modify dict before add
     
-    // modify orientation
-    [dictInfo setValue:[_newImageInfoDictonary valueForKey:(NSString *)kCGImagePropertyOrientation] forKey:(NSString*)kCGImagePropertyOrientation];
+    NSInteger currentOrientation = [[dict valueForKey:(NSString*)kCGImagePropertyOrientation] intValue];
     
-    // modify tiff orientation
-    NSMutableDictionary *tiffDict = [NSMutableDictionary dictionaryWithDictionary:[_newImageInfoDictonary valueForKey:(NSString*)kCGImagePropertyTIFFDictionary]];
-    [dictInfo setValue:tiffDict forKey:(NSString*)kCGImagePropertyTIFFDictionary];
+    // if the new Orientation has changed, we should exchange width and height
+    if (_newImageOrientation != -1 && currentOrientation != _newImageOrientation) {
+        
+        NSInteger pixelWidth = [[dict valueForKey:(NSString*)kCGImagePropertyPixelWidth] intValue];
+        NSInteger pixelHeight = [[dict valueForKey:(NSString*)kCGImagePropertyPixelHeight] intValue];
+        NSMutableDictionary *exifDictInfo = [NSMutableDictionary dictionaryWithDictionary:[dictInfo valueForKey:(NSString *)kCGImagePropertyExifDictionary]];
+        
+        if ((currentOrientation == exifOrientationUp || currentOrientation == exifOrientationUpMirrored
+             || currentOrientation == exifOrientationDown || currentOrientation == exifOrientationDownMirrored)) {
+            if (_newImageOrientation == exifOrientationUp
+                || _newImageOrientation == exifOrientationUpMirrored
+                || _newImageOrientation == exifOrientationDown
+                || _newImageOrientation == exifOrientationDownMirrored) {
+                // need not exchange width and height
+            }
+            else {
+                [dictInfo setValue:[NSNumber numberWithInteger:pixelHeight] forKey:(NSString*)kCGImagePropertyPixelWidth];
+                [dictInfo setValue:[NSNumber numberWithInteger:pixelWidth] forKey:(NSString*)kCGImagePropertyPixelHeight];
+                
+                [exifDictInfo setValue:[NSNumber numberWithInteger:pixelHeight] forKey:(NSString*)kCGImagePropertyExifPixelXDimension];
+                [exifDictInfo setValue:[NSNumber numberWithInteger:pixelWidth] forKey:(NSString*)kCGImagePropertyExifPixelYDimension];
+            }
+        }
+        else if ((currentOrientation == exifOrientationLeft || currentOrientation == exifOrientationLeftMirrored
+                  || currentOrientation == exifOrientationRight || currentOrientation == exifOrientationRightMirrored)) {
+            if (_newImageOrientation == exifOrientationLeft
+                || _newImageOrientation == exifOrientationLeftMirrored
+                || _newImageOrientation == exifOrientationRight
+                || _newImageOrientation == exifOrientationRightMirrored) {
+                // need not exchange width and height
+            }
+            else {
+                [dictInfo setValue:[NSNumber numberWithInteger:pixelHeight] forKey:(NSString*)kCGImagePropertyPixelWidth];
+                [dictInfo setValue:[NSNumber numberWithInteger:pixelWidth] forKey:(NSString*)kCGImagePropertyPixelHeight];
+                
+                [exifDictInfo setValue:[NSNumber numberWithInteger:pixelHeight] forKey:(NSString*)kCGImagePropertyExifPixelXDimension];
+                [exifDictInfo setValue:[NSNumber numberWithInteger:pixelWidth] forKey:(NSString*)kCGImagePropertyExifPixelYDimension];
+            }
+        }
+        
+        // modify orientation
+        [dictInfo setValue:[NSNumber numberWithInteger:_newImageOrientation]forKey:(NSString*)kCGImagePropertyOrientation];
+        [dictInfo setValue:exifDictInfo forKey:(NSString*)kCGImagePropertyExifDictionary];
+    }
     
     CGImageDestinationAddImageFromSource(_imageDestination, _imageRef, 0, (CFDictionaryRef)dictInfo);
     CGImageDestinationFinalize(_imageDestination);
